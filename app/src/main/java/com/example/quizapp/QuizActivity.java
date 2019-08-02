@@ -5,6 +5,7 @@ import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
@@ -13,6 +14,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.shitij.goyal.slidebutton.SwipeButton;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -38,7 +41,7 @@ public class QuizActivity extends AppCompatActivity {
     private RadioButton rb1;
     private RadioButton rb2;
     private RadioButton rb3;
-    private Button buttonConfirmNext;
+    private SwipeButton buttonConfirmNext;
 
     private ColorStateList textColorDefaultRb;
     private ColorStateList textColorDefaultCd;
@@ -76,6 +79,9 @@ public class QuizActivity extends AppCompatActivity {
         textColorDefaultRb = rb1.getTextColors();
         textColorDefaultCd = textViewCountDown.getTextColors();
 
+       buttonConfirmNext.setVisibility(View.INVISIBLE);
+
+
         Intent intent = getIntent();
         int categoryID = intent.getIntExtra(StartingScreenActivity.EXTRA_CATEGORY_ID, 0);
         String categoryName = intent.getStringExtra(StartingScreenActivity.EXTRA_CATEGORY_NAME);
@@ -84,11 +90,21 @@ public class QuizActivity extends AppCompatActivity {
         textViewCategory.setText("Category: " + categoryName);
         textViewDifficulty.setText("Difficulty: " + difficulty);
 
+        rbGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                if (buttonConfirmNext.getVisibility() == View.INVISIBLE)
+                    buttonConfirmNext.setVisibility(View.VISIBLE);
+            }
+        });
+
+
         if (savedInstanceState == null) {
             QuizDbHelper dbHelper = QuizDbHelper.getInstance(this);
             questionList = dbHelper.getQuestions(categoryID, difficulty);
             questionCountTotal = questionList.size();
             Collections.shuffle(questionList);
+
 
             showNextQuestion();
         } else {
@@ -106,11 +122,22 @@ public class QuizActivity extends AppCompatActivity {
                 updateCountDownText();
                 showSolution();
             }
+
         }
 
-        buttonConfirmNext.setOnClickListener(new View.OnClickListener() {
+        buttonConfirmNext.addOnSwipeCallback(new SwipeButton.Swipe() {
             @Override
-            public void onClick(View v) {
+            public void onButtonPress() {
+
+            }
+
+            @Override
+            public void onSwipeCancel() {
+
+            }
+
+            @Override
+            public void onSwipeConfirm() {
                 if (!answered) {
                     if (rb1.isChecked() || rb2.isChecked() || rb3.isChecked()) {
                         checkAnswer();
@@ -118,11 +145,22 @@ public class QuizActivity extends AppCompatActivity {
                         Toast.makeText(QuizActivity.this, "Please select an answer", Toast.LENGTH_SHORT).show();
                     }
                 } else {
+                    //buttonConfirmNext.setVisibility(View.INVISIBLE);
                     showNextQuestion();
                 }
             }
         });
+
+        buttonConfirmNext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
     }
+
+
 
     private void showNextQuestion() {
         rb1.setTextColor(textColorDefaultRb);
@@ -141,10 +179,16 @@ public class QuizActivity extends AppCompatActivity {
             questionCounter++;
             textViewQuestionCount.setText("Question: " + questionCounter + "/" + questionCountTotal);
             answered = false;
-            buttonConfirmNext.setText("Confirm");
+            buttonConfirmNext.setText("Swipe Again to Confirm");
 
             timeLeftInMillis = COUNTDOWN_IN_MILLIS;
             startCountDown();
+
+            // makes sure button is not vis able for the first question
+            buttonConfirmNext.setVisibility(View.INVISIBLE);
+
+
+
         } else {
             finishQuiz();
         }
