@@ -5,105 +5,130 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorBackground"
-    android:padding="16dp"
     tools:context="com.example.quizapp.QuizActivity">
 
-    <TextView
-        android:id="@+id/text_view_score"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:freezesText="true"
-        android:text="Score: 0"
-        android:textColor="@android:color/black"
-        android:layout_alignParentBottom="true"
-        android:textSize="40sp"/>
-
-    <TextView
-        android:id="@+id/text_view_category"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:freezesText="true"
-        android:text=""
-        android:textColor="@android:color/black"
-        android:textSize="16sp"/>
-
-    <TextView
-        android:id="@+id/text_view_difficulty"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:freezesText="true"
-        android:text=""
-        android:textColor="@android:color/black"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:textSize="16sp"/>
-
-    <TextView
-        android:id="@+id/text_view_countdown"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:freezesText="true"
-        android:text="00:30"
-        android:textColor="@android:color/black"
-        android:textSize="40sp" />
-
-    <TextView
-        android:id="@+id/text_view_question"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@id/radio_group"
-        android:layout_marginBottom="60dp"
-        android:freezesText="true"
-        android:text="Here will be the question text\nHere will be the question text\nHere will be the question text"
-        android:textAlignment="center"
-        android:textColor="@android:color/black"
-        android:textSize="25sp" />
+        android:id="@+id/rel_header"
+        android:padding="16dp">
 
-    <RadioGroup
-        android:id="@+id/radio_group"
-        android:layout_width="wrap_content"
+            <TextView
+                android:id="@+id/text_view_category"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:freezesText="true"
+                android:text=""
+                android:textColor="@color/textColorWhite"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:id="@+id/text_view_difficulty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:freezesText="true"
+                android:text=""
+                android:textColor="@color/textColorWhite"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:textSize="16sp"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:padding="10dp">
+        android:id="@+id/rel_question"
+        android:layout_below="@+id/rel_header"
+        android:padding="16dp">
 
-        <RadioButton
-            android:id="@+id/radio_button1"
+            <TextView
+                android:id="@+id/text_view_question"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="50dp"
+                android:freezesText="true"
+                android:text="Here will be the question text\nHere will be the question text\nHere will be the question text"
+                android:textAlignment="center"
+                android:textColor="@color/textColorWhite"
+                android:textSize="25sp" />
+
+            <RadioGroup
+                android:id="@+id/radio_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:padding="10dp"
+                android:layout_below="@+id/text_view_question">
+
+                <RadioButton
+                    android:id="@+id/radio_button1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:freezesText="true"
+                    android:text="Option 1"
+                    android:padding="10dp"
+                    android:textSize="20sp"
+                    android:textColor="@color/textColorWhite"/>
+
+                <RadioButton
+                    android:id="@+id/radio_button2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:freezesText="true"
+                    android:text="Option 2"
+                    android:padding="10dp"
+                    android:textSize="20sp"
+                    android:textColor="@color/textColorWhite"/>
+
+                <RadioButton
+                    android:id="@+id/radio_button3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:freezesText="true"
+                    android:text="Option 3"
+                    android:padding="10dp"
+                    android:textSize="20sp"
+                    android:textColor="@color/textColorWhite"/>
+
+            </RadioGroup>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:id="@+id/rel_bottom"
+        android:layout_below="@+id/rel_question">
+
+        <TextView
+            android:id="@+id/text_view_score"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:freezesText="true"
-            android:text="Option 1"
-            android:padding="10dp"
-            android:textSize="20sp"/>
+            android:text="Score: 0"
+            android:textColor="@color/textColorWhite"
+            android:textSize="40sp"/>
 
-        <RadioButton
-            android:id="@+id/radio_button2"
+        <TextView
+            android:id="@+id/text_view_countdown"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
             android:freezesText="true"
-            android:text="Option 2"
-            android:padding="10dp"
-            android:textSize="20sp"/>
+            android:text="00:30"
+            android:textColor="@color/textColorWhite"
+            android:textSize="40sp" />
 
-        <RadioButton
-            android:id="@+id/radio_button3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:freezesText="true"
-            android:text="Option 3"
-            android:padding="10dp"
-            android:textSize="20sp"/>
-
-    </RadioGroup>
+    </RelativeLayout>
 
 
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/radio_group"
+        android:layout_height="match_parent"
+        android:layout_below="@id/rel_bottom"
         android:layout_marginTop="26dp">
 
         <TextView
@@ -112,31 +137,30 @@
             android:layout_height="wrap_content"
             android:freezesText="true"
             android:text="Question: 1/x"
-            android:textColor="@android:color/black"
+            android:textColor="@color/textColorWhite"
             android:textAlignment="center"
-            android:textSize="20sp"/>
+            android:textSize="16sp"/>
 
         <com.shitij.goyal.slidebutton.SwipeButton
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="55dp"
             android:id="@+id/button_confirm_next"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="26dp"
             android:freezesText="true"
-            android:text="Swipe"
             android:gravity="center"
-            android:background="#e96251"
-            android:layout_below="@id/text_view_question_count"
-            android:textSize="15sp"
+            android:background="#4656B3"
+            android:layout_alignParentBottom="true"
+            android:text="Swipe"
+            android:textSize="20sp"
             android:textColor="#FFF"
             app:gradient_color_1="#289F2B"
             app:gradient_color_2="#79af5d"
-            app:gradient_color_3="#e96251"
+            app:gradient_color_3="#4656B3"
             app:threshold="0.9"
             app:gradient_color_2_width="100dp"
             app:swipe_mode="mirror"
-            app:after_confirmation_background="#e96251"
-            app:button_confirm_text="Confirmed"
-            app:button_swipe_text="Swipe!!"/>
+            app:after_confirmation_background="#4656B3"
+            app:button_swipe_text="Keep Swiping!!"/>
 
     </RelativeLayout>
 

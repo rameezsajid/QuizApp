@@ -5,50 +5,122 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorBackground"
-    android:padding="16dp"
     tools:context=".StartingScreenActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
-        android:text="My Awesome Quiz"
-        android:textColor="@android:color/black"
-        android:textSize="35sp" />
+        android:id="@+id/rel_Main_Header"
+        android:padding="16dp"
+        android:layout_marginTop="40dp">
 
-    <TextView
-        android:id="@+id/text_view_highscore"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@id/button_start_quiz"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="32dp"
-        android:text="Highscore: 0"
-        android:textSize="20sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:text="My Awesome Quiz"
+            android:textSize="35sp"
+            android:textColor="@color/textColorWhite"/>
 
-    <Button
-        android:id="@+id/button_start_quiz"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="Start Quiz" />
 
-    <Spinner
-        android:id="@+id/spinner_category"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/button_start_quiz"
-        android:layout_below="@+id/button_start_quiz"
-        android:layout_marginTop="16dp" />
+    </RelativeLayout>
 
-    <Spinner
-        android:id="@+id/spinner_difficulty"
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/button_start_quiz"
-        android:layout_below="@+id/spinner_category"
-        android:layout_marginTop="16dp" />
+        android:id="@+id/rel_Main_Center"
+        android:layout_below="@+id/rel_Main_Header"
+        android:padding="16dp">
+
+
+        <TextView
+            android:id="@+id/text_view_highscore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:padding="10dp"
+            android:layout_marginBottom="12dp"
+            android:text="Highscore: 0"
+            android:textSize="30sp"
+            android:textColor="@color/textColorWhite"/>
+
+        <TextView
+            android:id="@+id/text_view_desc1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:padding="10dp"
+            android:layout_marginBottom="12dp"
+            android:text="Please Select Category"
+            android:layout_below="@+id/text_view_highscore"
+            android:textSize="25sp"
+            android:textColor="@color/textColorWhite"/>
+
+
+        <Spinner
+            android:id="@+id/spinner_category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_below="@+id/text_view_desc1"
+            android:layout_alignStart="@+id/text_view_highscore"/>
+
+        <TextView
+            android:id="@+id/text_view_desc2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:padding="10dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp"
+            android:text="Please Select Difficulty Level"
+            android:layout_below="@+id/spinner_category"
+            android:textSize="25sp"
+            android:textColor="@color/textColorWhite"/>
+
+        <Spinner
+            android:id="@+id/spinner_difficulty"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_below="@+id/text_view_desc2"
+            android:layout_marginTop="16dp"
+            android:layout_alignStart="@+id/text_view_highscore"/>
+
+
+
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rel_Main_Bottom">
+
+        <com.shitij.goyal.slidebutton.SwipeButton
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:id="@+id/button_start_quiz"
+            android:layout_marginTop="26dp"
+            android:freezesText="true"
+            android:gravity="center"
+            android:background="#4656B3"
+            android:layout_alignParentBottom="true"
+            android:text="Swipe"
+            android:textSize="20sp"
+            android:textColor="#FFF"
+            app:gradient_color_1="#289F2B"
+            app:gradient_color_2="#79af5d"
+            app:gradient_color_3="#4656B3"
+            app:threshold="0.9"
+            app:gradient_color_2_width="100dp"
+            app:swipe_mode="mirror"
+            app:after_confirmation_background="#4656B3"
+            app:button_swipe_text="Keep Swiping!!"/>
+
+
+    </RelativeLayout>
 
 
 </RelativeLayout>

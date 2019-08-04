@@ -133,6 +133,7 @@ public class QuizActivity extends AppCompatActivity {
 
             @Override
             public void onSwipeCancel() {
+                Toast.makeText(QuizActivity.this, "Complete Swipe", Toast.LENGTH_SHORT).show();
 
             }
 
@@ -148,13 +149,6 @@ public class QuizActivity extends AppCompatActivity {
                     //buttonConfirmNext.setVisibility(View.INVISIBLE);
                     showNextQuestion();
                 }
-            }
-        });
-
-        buttonConfirmNext.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
             }
         });
 
@@ -179,7 +173,6 @@ public class QuizActivity extends AppCompatActivity {
             questionCounter++;
             textViewQuestionCount.setText("Question: " + questionCounter + "/" + questionCountTotal);
             answered = false;
-            buttonConfirmNext.setText("Swipe Again to Confirm");
 
             timeLeftInMillis = COUNTDOWN_IN_MILLIS;
             startCountDown();
@@ -260,12 +253,6 @@ public class QuizActivity extends AppCompatActivity {
                 rb3.setTextColor(Color.GREEN);
                 textViewQuestion.setText("Answer 3 is correct");
                 break;
-        }
-
-        if (questionCounter < questionCountTotal) {
-            buttonConfirmNext.setText("Next");
-        } else {
-            buttonConfirmNext.setText("Finish");
         }
     }
 

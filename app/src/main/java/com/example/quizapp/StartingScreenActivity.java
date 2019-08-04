@@ -4,12 +4,17 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.shitij.goyal.slidebutton.SwipeButton;
 
 import java.util.List;
 
@@ -28,6 +33,7 @@ public class StartingScreenActivity extends AppCompatActivity {
 
     private int highscore;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,14 +47,45 @@ public class StartingScreenActivity extends AppCompatActivity {
         loadDifficultyLevels();
         loadHighscore();
 
-        Button buttonStartQuiz = findViewById(R.id.button_start_quiz);
-        buttonStartQuiz.setOnClickListener(new View.OnClickListener() {
+        SwipeButton buttonStartQuiz = findViewById(R.id.button_start_quiz);
+
+        spinnerCategory.setOnItemSelectedListener(listener);
+        spinnerDifficulty.setOnItemSelectedListener(listener);
+
+
+        buttonStartQuiz.addOnSwipeCallback(new SwipeButton.Swipe() {
             @Override
-            public void onClick(View v) {
+            public void onButtonPress() {
+
+            }
+
+            @Override
+            public void onSwipeCancel() {
+                Toast.makeText(StartingScreenActivity.this, "Please Complete Swipe", Toast.LENGTH_SHORT).show();
+
+            }
+
+            @Override
+            public void onSwipeConfirm() {
+
                 startQuiz();
+
             }
         });
+
     }
+
+    private AdapterView.OnItemSelectedListener listener = new AdapterView.OnItemSelectedListener() {
+        @Override
+        public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+            ((TextView) parent.getChildAt(0)).setTextColor(Color.WHITE);
+        }
+
+        @Override
+        public void onNothingSelected(AdapterView<?> parent) {
+
+        }
+    };
 
     private void startQuiz() {
         Category selectedCategory = (Category) spinnerCategory.getSelectedItem();
