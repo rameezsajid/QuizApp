@@ -141,10 +141,58 @@ public class QuizDbHelper extends SQLiteOpenHelper {
                 "<head> tag", "<body> tag", "both (Correct)", 3,
                 Question.DIFFICULTY_EASY, Category.JAVASCRIPT);
         addQuestion(q13);
-        Question q14 = new Question("PHP: What is the correct way to write if statement",
+        Question q14 = new Question("JavaScript: What is the correct way to write if statement",
                 "if(i==5) (Correct)", "if i == 5", "if i = 5", 1,
                 Question.DIFFICULTY_MEDIUM, Category.JAVASCRIPT);
         addQuestion(q14);
+        Question q15 = new Question("PHP: Which of the following type of variables are whole numbers, without a decimal point, like 4195?",
+                "Integers (Correct)", "Doubles", "Strings", 1,
+                Question.DIFFICULTY_MEDIUM, Category.PHP);
+        addQuestion(q15);
+        Question q16 = new Question("PHP: Which of the following is correct about constants?",
+                "Unlike with variables, you do not need to have a constant with a $", "Only scalar data (boolean, integer, float and string) can be contained in constants.", "Both the Above (Correct)", 3,
+                Question.DIFFICULTY_HARD, Category.PHP);
+        addQuestion(q16);
+        Question q17 = new Question("PHP: Which of the following function is used to get length of a string?",
+                "size()", "strlen() (Correct)", "length", 2,
+                Question.DIFFICULTY_EASY, Category.PHP);
+        addQuestion(q17);
+        Question q18 = new Question("PHP: Which of the following variable is used to get user's browser and operating system details in PHP?",
+                "HTTP_USER_AGENT (Correct)", "USER", "AGENT", 1,
+                Question.DIFFICULTY_HARD, Category.PHP);
+        addQuestion(q18);
+        Question q19 = new Question("PHP: Which of the following function returns selected parts of an array?",
+                "array_reverse()", "array_slice() (Correct)", "array_search()", 2,
+                Question.DIFFICULTY_MEDIUM, Category.PHP);
+        addQuestion(q19);
+        Question q20 = new Question("JavaScript: Which built-in method returns the length of the string?",
+                "size()", "length() (Correct)", "index()", 2,
+                Question.DIFFICULTY_EASY, Category.JAVASCRIPT);
+        addQuestion(q20);
+        Question q21 = new Question("JavaScript: Which built-in method returns the calling string value converted to upper case?",
+                "changeCase(case)", "toUpper()", "toUpperCase() (Correct)", 3,
+                Question.DIFFICULTY_EASY, Category.JAVASCRIPT);
+        addQuestion(q21);
+        Question q22 = new Question("JavaScript: Which of the following function of String object extracts a section of a string and returns a new string?",
+                "replace()", "split()", "slice() (Correct)", 3,
+                Question.DIFFICULTY_MEDIUM, Category.JAVASCRIPT);
+        addQuestion(q22);
+        Question q23 = new Question("JavaScript: Which of the following function of String object returns the calling string value converted to upper case?",
+                "toUpperCase() (Correct)", "toLocaleUpperCase()", "substring()", 1,
+                Question.DIFFICULTY_HARD, Category.JAVASCRIPT);
+        addQuestion(q23);
+        Question q24 = new Question("JavaScript: Which of the following function of String object causes a string to be displayed in a small font, as if it were in a <small> tag?",
+                "link()", "small() (Correct)", "sub()", 2,
+                Question.DIFFICULTY_MEDIUM, Category.JAVASCRIPT);
+        addQuestion(q24);
+        Question q25 = new Question("JavaScript: Which of the following function of Array object adds one or more elements to the end of an array and returns the new length of the array?",
+                "pop", "push (Correct)", "join", 2,
+                Question.DIFFICULTY_HARD, Category.JAVASCRIPT);
+        addQuestion(q25);
+        Question q26 = new Question("JavaScript: Which of the following function of Array object reverses the order of the elements of an array?",
+                "reduce()", "push()", "reverse() (Correct)", 3,
+                Question.DIFFICULTY_HARD, Category.JAVASCRIPT);
+        addQuestion(q26);
 
     }
 
