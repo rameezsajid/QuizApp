@@ -4,3 +4,4 @@ Android Mobile - Quiz App
 - XML
 - SQLite
 - Manual Testing
+- Android App Design
