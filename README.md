@@ -4,6 +4,5 @@ Android Mobile - Quiz App
 - XML
 - SQLite
 - Manual Testing
-- Android App Design
 
 <img src="screenshots/image1.jpeg" width=250> <img src="screenshots/image2.jpeg" width=250> <img src="screenshots/image3.jpeg" width=250>
