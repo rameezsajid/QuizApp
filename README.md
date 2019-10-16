@@ -3,7 +3,7 @@ Android Mobile - Quiz App
 - IDE - Android Studio
 - Built using Java 
 - XML
-- SQLite
+- SQLite for Database
 
 Android Application that allows users to be able to take a series of quizzes.
 
