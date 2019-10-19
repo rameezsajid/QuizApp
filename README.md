@@ -1,4 +1,4 @@
-# Programming Quiz App
+# Quiz App
 Android Mobile - Quiz App
 - IDE - Android Studio
 - Built using Java 
