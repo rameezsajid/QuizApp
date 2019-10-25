@@ -1,6 +1,6 @@
 # Quiz App
-- Android Mobile
-- IDE - Android Studio
+- Android Mobile Quiz Application
+- Android Studio
 - Built using Java 
 - XML
 - SQLite for Database
