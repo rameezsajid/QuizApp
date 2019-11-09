@@ -4,7 +4,7 @@
 - Built using Java 
 - XML
 - SQLite for Database
-- Android Application that allows users to be able to take a series of quizzes.
+- Android Application that allows users to play a series of quizzes.
 - Difficulty levels option
 
 # Screenshots of App
