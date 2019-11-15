@@ -5,6 +5,7 @@
 - XML
 - SQLite for Database
 - Android Application that allows users to play a series of quizzes.
+- Programming Languages to Choose From (Java, PHP and JavaScript)
 - Difficulty options
 
 # Screenshots of App
