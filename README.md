@@ -1,5 +1,5 @@
 # Quiz App - Android
-- Android Mobile Quiz Application
+- Quiz Application
 - Android Studio
 - Built using Java 
 - XML
