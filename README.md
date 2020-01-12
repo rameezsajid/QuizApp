@@ -5,7 +5,7 @@
 - XML
 - SQLite for Database
 - Android Application that allows users to play a series of quizzes.
-- Programming Languages to Choose From (Java, PHP and JavaScript)
+- Programming Languages to Choose From (Java, PHP and JavaScript) when playing
 - MVC Design Pattern
 
 # Screenshots of App
