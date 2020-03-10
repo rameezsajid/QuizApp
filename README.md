@@ -1,11 +1,12 @@
 # Quiz App - Android
 - Quiz Application
 - Android Studio
+
 - Built using Java 
 - XML
 - SQLite for Database
 - Android Application that allows users to play a series of quizzes.
-- Programming Languages to Choose From (Java, PHP and JavaScript) when playing
+- Programming Languages to Choose From Java, PHP and JavaScript.
 - MVC Design Pattern
 
 # Screenshots of App
