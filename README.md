@@ -1,4 +1,4 @@
-# Quiz App - Android
+# Quiz App
 - Android Studio
 - Android SDK
 - Built using Java 
