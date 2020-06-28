@@ -1,5 +1,5 @@
 # Quiz App
-- Android Studio
+- Android Studio IDE
 - Android SDK
 - Built using Java 
 - XML
