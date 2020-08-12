@@ -3,7 +3,7 @@
 - Android SDK
 - Built using Java 
 - XML
-- SQLite for Database
+- SQLite
 - Android Application that allows users to play a series of quizzes.
 - Programming Questions to Choose From Java, PHP and JavaScript.
 - MVC Design Pattern
